@@ -1,7 +1,4 @@
-package com.dercoding.myrecyclerview.model;
-
-import com.dercoding.myrecyclerview.Hero.Hero;
-import com.dercoding.myrecyclerview.R;
+package com.dercoding.myrecyclerview;
 
 import java.util.ArrayList;
 
@@ -47,7 +44,7 @@ public class HeroesData {
 
     static ArrayList<Hero>  getListData() {
         ArrayList<Hero> list = new ArrayList<>();
-        for (int position = 0; position < heroName.length; position++) {
+        for (int position = 1; position < heroName.length; position++) {
             Hero hero = new Hero();
             hero.setName(heroName[position]);
             hero.setDetail(heroDetails[position]);
