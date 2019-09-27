@@ -44,7 +44,7 @@ public class HeroesData {
 
     static ArrayList<Hero>  getListData() {
         ArrayList<Hero> list = new ArrayList<>();
-        for (int position = 1; position < heroName.length; position++) {
+        for (int position = 0; position < heroName.length; position++) {
             Hero hero = new Hero();
             hero.setName(heroName[position]);
             hero.setDetail(heroDetails[position]);
