@@ -1,4 +1,4 @@
-package com.dercoding.myrecyclerview.Hero;
+package com.dercoding.myrecyclerview;
 
 public class Hero {
     private String name;

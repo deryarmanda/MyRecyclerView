@@ -1,4 +1,4 @@
-package com.dercoding.myrecyclerview.adapter;
+package com.dercoding.myrecyclerview;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,15 +11,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
-import com.dercoding.myrecyclerview.Hero.Hero;
-import com.dercoding.myrecyclerview.R;
 
 import java.util.ArrayList;
 
 public class ListHeroAdapter extends RecyclerView.Adapter<ListHeroAdapter.ListViewHolder> {
+
     private ArrayList<Hero> listHero;
 
-    public ListHeroAdapter(ArrayList<Hero> list)    {
+    public ListHeroAdapter(ArrayList<Hero> list){
         this.listHero = list;
     }
 
@@ -31,7 +30,7 @@ public class ListHeroAdapter extends RecyclerView.Adapter<ListHeroAdapter.ListVi
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final ListViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ListViewHolder holder, int position) {
         Hero hero = listHero.get(position);
         Glide.with(holder.itemView.getContext())
                 .load(hero.getPhoto())
@@ -46,11 +45,12 @@ public class ListHeroAdapter extends RecyclerView.Adapter<ListHeroAdapter.ListVi
         return listHero.size();
     }
 
-    class ListViewHolder extends RecyclerView.ViewHolder {
+    public class ListViewHolder extends RecyclerView.ViewHolder {
+
         ImageView imgPhoto;
         TextView tvName, tvDetail;
 
-        ListViewHolder(View itemView) {
+        public ListViewHolder(@NonNull View itemView) {
             super(itemView);
             imgPhoto = itemView.findViewById(R.id.img_item_photo);
             tvName = itemView.findViewById(R.id.tv_item_name);
