@@ -1,6 +1,7 @@
 package com.dercoding.myrecyclerview;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -27,11 +28,24 @@ public class MainActivity extends AppCompatActivity {
         showRecyclerList();
     }
 
+    // LIST
+
     private void showRecyclerList(){
         rvHeroes.setLayoutManager(new LinearLayoutManager(this));
         ListHeroAdapter listHeroAdapter = new ListHeroAdapter(list);
         rvHeroes.setAdapter(listHeroAdapter);
     }
+
+    //GRID
+
+    private void showRecycelerGrid(){
+        rvHeroes.setLayoutManager(new GridLayoutManager(this, 2));
+        GridHeroAdapter gridHeroAdapter = new GridHeroAdapter(list);
+        rvHeroes.setAdapter(gridHeroAdapter);
+    }
+
+
+    // MENU
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -45,12 +59,17 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void setMode(int selectedMode)   {
-        switch (selectedMode)   {
+
+    public void setMode(int selectedMode) {
+        switch (selectedMode) {
             case R.id.action_list:
+                // MEMANGGIL LIST METOD
+                showRecyclerList();
                 break;
 
             case R.id.action_grid:
+                // MEMANGGIL GRID METOD
+                showRecycelerGrid();
                 break;
 
             case R.id.action_cardview:
